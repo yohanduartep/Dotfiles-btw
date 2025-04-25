@@ -157,9 +157,9 @@
                     	"mode": "month",
                     	"format": {
                         	"months": "<span color='#732d50'><b>{}</b></span>",
-                        	"days": "<span color='#e3d6ba'><b>{}</b></span>",
-                        	"weeks": "<span color='#e3d6ba'><b>W{}</b></span>",
-                        	"weekdays": "<span color='#e3d6ba'><b>{}</b></span>",
+                        	"days": "<span color='#f3eee3'><b>{}</b></span>",
+                        	"weeks": "<span color='#f3eee3'><b>W{}</b></span>",
+                        	"weekdays": "<span color='#f3eee3'><b>{}</b></span>",
                         	"today": "<span color='#ba7096'><b>{}</b></span>"
                 	}
                 }

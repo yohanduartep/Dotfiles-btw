@@ -2,21 +2,21 @@
 	font-size: 13px;
 	font-family: Rubik;
 	font-weight: bold;
-	color: #e3d6ba;
+	color: #f3eee3;
 }
 tooltip label {
 	padding: 3px 3px 3px 3px;
 	font-family: Rubik;
 	font-weight: bold;
 	font-size: 13px;
-	color: #e3d6ba;
+	color: #f3eee3;
 }
 tooltip {
 	padding: 10px 10px 10px 10px;
 	background: #0c0611;
 	border: 0px solid;
 	border-radius: 0px;
-	color: #e3d6ba;
+	color: #f3eee3;
 }
 
 window#waybar {
@@ -160,7 +160,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-	background: #ba7096;
+	background: #8f5672;
 	border-radius: 8px;
 	animation: gradient_f 20s ease-in infinite;
  	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
