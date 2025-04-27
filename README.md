@@ -2,7 +2,7 @@
 
 ## Desktop
 
-I set my wallpapers using my other repository [where i donwload NASA APOD daily](https://github.com/yohanduartep/APOD) (if you want to customize it you can use [this one](https://github.com/yohanduartep/APOD-Script) and set your API Key).
+I set my wallpapers using my other repository [where i download NASA APOD daily](https://github.com/yohanduartep/APOD) (if you want to customize it you can use [this one](https://github.com/yohanduartep/APOD-Script) and set your own API Key).
 
 ![Desktop](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/desktop.png)
 
