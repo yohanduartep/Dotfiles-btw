@@ -1,8 +1,8 @@
 # My dotfiles. I use arch btw
 
-## Wallpaper
+## Desktop
 
-![Wallpaper](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/wallpaper.png)
+![Desktop](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/desktop.png)
 
 ## Colors
 
