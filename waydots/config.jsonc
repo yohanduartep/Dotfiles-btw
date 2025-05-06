@@ -1,231 +1,225 @@
 {
-	"layer": "top",
-	"position": "top",
-	"height": 31,
-	"margin-left": 0,
-	"margin-right": 0,
-	"spacing": 2,
-
-    //Modules
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 2,
     "modules-left": [
         "hyprland/workspaces#special",
         "group/hardware",
-        "hyprland/workspaces"
     ],
     "modules-center":[
         "hyprland/window"
     ],
     "modules-right":[
         "tray",
-        "pulseaudio",
-        "group/network",
-        "group/clockbat"
+        "hyprland/workspaces",
+        "group/big",
+    ],
+    "custom/space": {
+        "format": "  ",
+        "tooltip": false
+    },
+    "custom/spaceline": {
+        "format": " | ",
+        "tooltip": false
+    },
+    "custom/linel":{
+        "format": "  <span size='x-large'><b>‖</b></span>",
+        "tooltip": false
+    },
+    "custom/liner":{
+        "format": "<span size='x-large'><b>‖</b></span>  ",
+        "tooltip": false
+    },
 
-	],
-	
-	//Spaces and lines
-	"custom/space": {
-		"format": "  ",
-		"tooltip": false
-	},
-	"custom/spaceline": {
-		"format": " | ",
-		"tooltip": false
-	},
-	"custom/line":{
-		"format": "|",
-		"tooltip": false
-	},
-	"hyprland/window":{
-		"separate-outputs": true
-	},
-	
-	//Hardware
-	"group/hardware": {
-		"orientation": "horizontal",
-		"modules": [
-			"custom/space",
-			"custom/cpuicon",
-			"cpu",
-			"temperature",
-			"custom/spaceline",
-			"custom/gpuicon",
-			"custom/gpu",
-			"custom/gputemp",
-			"custom/spaceline",
-			"custom/memicon",
-			"memory",
-			"custom/space"
-		]
-	},
-
-	//CPU
-	"custom/cpuicon": {
-		"format": "<span size='x-large'><b> </b></span>",
-		"tooltip": false	
-	},
-	"cpu": {
-		"interval": 10,
-		"format": "{usage:2}%"
-	},
-	"temperature":{
-		"thermal-zone": 7,
-		"interval": 10,
-		"format": " {temperatureC}°C"
-	},
-	//GPU
-	"custom/gpuicon":{
-		"format": "<span size='x-large'><b>󰢮 </b></span>",
-		"tooltip": false
-	},
-	"custom/gpu": {
-		"exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-		"format": "{}%",
-		"return-type": "",
-		"interval": 10,
-       "tooltip": false
-	},
-	"custom/gputemp": {
-		"exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
-		"format": " {}°C",
-		"return-type": "",
-		"interval": 10,
-"tooltip": false
-
-	},
-	//RAM
-	"custom/memicon": {
-		"format": "<span>RAM: </span>",
-		"tooltip": false
-	},
-	"memory": {
-		"interval": 10,
-		"format": " {used:.1f}G/{total:.1f}G",
-"tooltip": false
-
-	},
-
-	//Network
-	"group/network": {
-		"orientation": "horizontal",
-		"modules": [
-			"network",
-			"custom/public_ip"
-		]
-	},
-	"custom/public_ip": {
-		"format": "{} ",
-		"exec": "~/.config/waybar/scripts/public_ip.sh",
-		"return-type": "text",
-		"interval": 10,
-"tooltip": false
-
-	},
-
-	"network": {
-		"family": "ipv4",
-		"format-wifi": "󰖩  {essid} |  {gwaddr}  |",
-		"format-ethernet": "󰈀  eth |  {gwaddr}  |",
-		"tooltip-format": "| {ifname} | 󰖩  {signalStrength}% | {ipaddr} |",
-		"format-linked": "{ifname} (No IP) 󰖩",
-		"format-disconnected": "󰖩  ",
-		"on-click": "kitty -e nmtui"
-	},
-
-	//Clock, date and battery
-	"group/clockbat": {
-		"orientation": "horizontal",
-		"modules": [
-			"clock",
-			"battery"
-		]
-	},
-	"clock": {
-		"format": "   {:%d-%m-%Y |  󰥔  %H:%M |}",
-		"tooltip-format": "<tt>{calendar}</tt>",
-        	"calendar": {
-                    	"mode": "month",
-                    	"format": {
-                        	"months": "<span color='#732d50'><b>{}</b></span>",
-                        	"days": "<span color='#f3eee3'><b>{}</b></span>",
-                        	"weeks": "<span color='#f3eee3'><b>W{}</b></span>",
-                        	"weekdays": "<span color='#f3eee3'><b>{}</b></span>",
-                        	"today": "<span color='#ba7096'><b>{}</b></span>"
-                	}
-                }
-    	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"on-click":"systemctl susped && hyprlock",
-		"on-click-middle":"/home/yohansan1/Pictures/random_nasa_apod.sh && shutdown -h now",
-		"on-click-right": "reboot",
-		"format": "{icon} {capacity}% ",
-		"format-icons": [
-			"󰂎",
-			"󰁼",
-			"󰁿",
-			"󰁹"
-		]
-	},
-
-	//Audio
-	"pulseaudio": {
-		"format": "{icon}  {volume:2}%",
-		"format-source": " {volume}%",
-		"format-muted": "MUTE",
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				"󰕾"
-			]
-		},
-		"scroll-step": 5,
-		"on-click-right": "pavucontrol",
-		"on-click": "pamixer -t"
-	},
-
-    //Tray
+    "hyprland/window":{
+        "separate-outputs": true
+    },
+    "group/big": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/space",
+            "pulseaudio",
+            "custom/linel",
+            "group/network",
+            "custom/liner",
+            "group/clockbat",
+        ]
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/space",
+            "custom/cpuicon",
+            "cpu",
+            "temperature",
+            "custom/spaceline",
+            "custom/gpuicon",
+            "custom/gpu",
+            "custom/gputemp",
+            "custom/spaceline",
+            "custom/memicon",
+            "memory",
+            "custom/space"
+        ]
+    },
+    "custom/cpuicon": {
+        "format": "<span size='x-large'><b> </b></span>",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "{usage:2}%"
+    },
+    "temperature":{
+        "thermal-zone": 7,
+        "interval": 5,
+        "format": " {temperatureC}°C"
+    },
+    "custom/gpuicon":{
+        "format": "<span size='x-large'><b>󰢮 </b></span>",
+        "tooltip": false
+    },
+    "custom/gpu": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "{}%",
+        "return-type": "",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/gputemp": {
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        "format": " {}°C",
+        "return-type": "",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/memicon": {
+        "format": "<span>RAM: </span>",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {used:.1f}G/{total:.1f}G",
+        "tooltip": false
+    },
+    "group/network": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "custom/public_ip"
+        ]
+    },
+    "custom/public_ip": {
+        "format": "{} ",
+        "exec": "~/.config/waybar/scripts/public_ip.sh",
+        "return-type": "text",
+        "interval": 5,
+        "tooltip": false
+    },
+    "network": {
+        "family": "ipv4",
+        "format-wifi": "󰖩  {essid}  |  {gwaddr}  |",
+        "format-ethernet": "󰈀  eth  |  {gwaddr}  |",
+        "tooltip-format": "| {ifname} | 󰖩  {signalStrength}% | {ipaddr} |",
+        "format-linked": "{ifname} (No IP) 󰖩",
+        "format-disconnected": "󰖩  ",
+        "on-click": "kitty -e nmtui"
+    },
+    "group/clockbat": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+            "battery"
+        ]
+    },
+    "clock": {
+        "format": "   {:%d-%m-%Y |  󰥔  %H:%M |}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ba7096'><b>{}</b></span>",
+                "days": "<span color='#f3eee3'><b>{}</b></span>",
+                "weeks": "<span color='#f3eee3'><b>W{}</b></span>",
+                "weekdays": "<span color='#f3eee3'><b>{}</b></span>",
+                "today": "<span color='#ba7096'><b>{}</b></span>"
+            }
+        }
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "on-click":"hyprlock",
+        "on-click-middle":"/home/yohansan1/Pictures/random_nasa_apod.sh && shutdown -h now",
+        "on-click-right": "reboot",
+        "format": "{icon} {capacity}% ",
+        "format-icons": [
+            "󰂎",
+            "󰁼",
+            "󰁿",
+            "󰁹"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume:2}%",
+        "format-source": " {volume}%",
+        "format-muted": "MUTE",
+        "format-icons": {
+            "headphones": "",
+            "default": [
+                "",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 5,
+        "on-click-right": "pavucontrol",
+        "on-click": "pamixer -t"
+    },
     "tray": {
         "icon-size": 18,
         "spacing": 1
     },
-
-	//Workspaces
-	"hyprland/workspaces": {
-	 	"format": "{icon}",
-		"active-only": false,
-		"all-outputs": false,
-    		"show-special": false,
-		"on-click": "activate",
-		"format-icons":{
-      			"1": "I",
-			"2": "II",
-			"3": "III",
-			"4": "IV",
-			"5": "V",
-			"6": "VI",
-			"7": "VII",
-			"8": "VIII",
-			"9": "IX",
-			"10": "X"
-		}
-	},
-	"hyprland/workspaces#special": {
-	 	"format": "{icon} ",
-   		"show-special":true,
-		"active-only":false,
-		"all-outputs":true,
-   		"ignore-workspaces":["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-		"persistent-workspaces": ["special"],
-		"on-click": "activate",
-		"format-icons":{
-			"special": " <span size='x-large'><b></b></span>  "
-		}
-		
-	}	
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "active-only": false,
+        "all-outputs": false,
+        "show-special": false,
+        "on-click": "activate",
+        "format-icons":{
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "11": "Code",
+            "12": "Read",
+            "13": "Mail",
+            "14": "News",
+            "15": "Steam",
+            "16": "Discord"
+        }
+    },
+    "hyprland/workspaces#special": {
+        "format": "{icon} ",
+        "show-special":true,
+        "active-only":false,
+        "all-outputs":true,
+        "ignore-workspaces":["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11","12","13","14","15","16"],
+        "persistent-workspaces": ["special"],
+        "on-click": "activate",
+        "format-icons":{
+            "special": " <span size='x-large'><b></b></span>  "
+        }
+    }
 }

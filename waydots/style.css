@@ -1,174 +1,156 @@
 * {
-	font-size: 13px;
-	font-family: Rubik;
-	font-weight: bold;
-	color: #f3eee3;
+    font-size: 13px;
+    font-family: Rubik;
+    font-weight: bold;
+    color: #f3eee3;
 }
 tooltip label {
-	padding: 3px 3px 3px 3px;
-	font-family: Rubik;
-	font-weight: bold;
-	font-size: 13px;
-	color: #f3eee3;
+    padding: 3px 3px 3px 3px;
+    font-family: Rubik;
+    font-weight: bold;
+    font-size: 13px;
+    color: #f3eee3;
 }
 tooltip {
-	padding: 10px 10px 10px 10px;
-	background: #0c0611;
-	border: 0px solid;
-	border-radius: 0px;
-	color: #f3eee3;
+    padding: 10px 10px 10px 10px;
+    border: 0px solid;
+    border-radius: 3px;
+    color: #f3eee3;
 }
 
 window#waybar {
-	background: rgba(12, 6, 17, 100);
-	color: #0c0611
+    background: #190a12;
+    color: #190a12;
 }
 
 #custom-memicon1 {
-	font-size: 13px;
+    font-size: 13px;
 }
 #custom-cpuicon {
-	font-weight: normal;
-	font-size: 13px;
+    font-weight: normal;
+    font-size: 13px;
 }
 #custom-workspaces {
-	font-size: 13px;
-	font-family: Typeface;
+    font-size: 13px;
+    font-family: Typeface;
 }
-#custom-app{
-	background: #0c0611;
-	border: 0px solid;
-}
-
-#clock{
-	padding: 3px 0px 3px 5px;
-	border: 0px solid;
-	border-radius: 8px;
-	min-width: 150px;
-}
-.modules-left{
-	background: #0c0611;
-	padding-top: 0px;
-	padding-bottom: 2px;
-	padding-left: 1px;
-	padding-right: 3px;
-}
-.modules-center{
-        background: #0c0611;
-        padding-top: 0px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-        padding-right: 5px;
-}
-.modules-right{
-        background: #0c0611;
-        padding-top: 0px;
-        padding-bottom: 2px;
-	padding-left: 3px;
-        padding-right: 1px;
+#custom-app {
+    border: 0px solid;
 }
 
-#hardware{
-	background: #ba7096;
-	padding: 0px 0px 0px 0px;
-	border: 0px solid;
-	border-radius: 8px;
+#clock {
+    padding: 3px 0px 3px 5px;
+    border: 0px solid;
+    border-radius: 3px;
+    min-width: 150px;
 }
-#network{
-	background: #ba7096;
-	padding: 3px 5px;
-	margin: 0px 0px 0px 0px;
-	border: 0px solid;
-	border-radius: 8px;
+.modules-left {
+    background: #190a12;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    padding-right: 3px;
+}
+.modules-center {
+    background: #190a12;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    margin-right: 20rem;
+}
+.modules-right {
+    background: #190a12;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 3px;
+    padding-right: 1px;
+}
+
+#hardware {
+    background: #884e6b;
+    padding: 0px 0px 0px 0px;
+    border: 0px solid;
+    border-radius: 3px;
+}
+#network {
+    padding: 3px 5px;
+    margin: 0px 0px 0px 0px;
+    border: 0px solid;
+    border-radius: 3px;
 }
 
 #battery {
-	padding: 3px 5px 3px 0px;
-	border: 0px solid;
-	border-radius: 8px;
-	min-width: 70px;
+    padding: 3px 5px 3px 0px;
+    border: 0px solid;
+    border-radius: 3px;
+    min-width: 70px;
 }
-#cpu{
-	padding: 3px 0px;
-	margin: 0px 0px 0px 0px;
+#cpu {
+    padding: 3px 0px;
+    margin: 0px 0px 0px 0px;
 }
-#custom-cpuicon{
-	padding: 3px 0px;
-	margin: 0px 0px 0px 0px;
+#custom-cpuicon {
+    padding: 3px 0px;
+    margin: 0px 0px 0px 0px;
 }
-#memory{
-	padding: 3px 0px;
-	margin: 0px 0px 0px 0px;
+#memory {
+    padding: 3px 0px;
+    margin: 0px 0px 0px 0px;
 }
-#custom-memicon1{
-	padding: 3px 0px;
-	margin: 0px 0px 0px 0px;
+#custom-memicon1 {
+    padding: 3px 0px;
+    margin: 0px 0px 0px 0px;
 }
-#custom-space{
-	padding: 3px 0px;
-	margin: 0px 0px 0px 0px;
+#custom-space {
+    padding: 3px 0px;
+    margin: 0px 0px 0px 0px;
 }
-#pulseaudio{
-	background: #ba7096;
-	padding: 5px 5px;
-	margin: 0px 0px 0px 0px;
-	border: 0px solid;
-	border-radius: 8px;
+#pulseaudio {
+    padding: 5px 5px;
+    margin: 0px 0px 0px 0px;
+    border: 0px solid;
+    border-radius: 3px;
 }
-#tray{
-	background: #ba7096;
-        padding: 5px 5px;
-        margin: 0px 0px 0px 0px;
-        border: 0px solid;
-	border-radius: 8px;
+#tray {
+    padding: 5px 5px;
+    margin: 0px 0px 0px 0px;
+    border: 0px solid;
+    border-radius: 3px;
 }
 
-#bluetooth{
-        background: #ba7096;
-        padding: 3px 5px;
-        margin: 0px 0px 0px 0px;
-        border: 0px solid;
-        border-radius: 8px;
+#custom-app {
+    padding: 3px 10px;
+    margin: 0px 0px 0px 0px;
+    min-width: 180px;
 }
 
-#custom-app{
-	padding: 3px 10px;
-	margin: 0px 0px 0px 0px;
-	min-width: 180px;
+#workspaces {
+    background: #884e6b;
+    border: 0px;
+    border-radius: 3px;
 }
 
-#workspaces{
-	background: #ba7096;
-        margin: 0px 0px 0px 0px;
-        border: 0px solid;
-	border-radius: 8px;
-	
+#clockbat {
+    background: #732d50;
+    border: 0px solid;
+    border-radius: 3px;
 }
 
-#clockbat{
-	background: #732d50;
-	border: 0px solid;
-	border-radius: 8px;
+#big {
+    background: #732d50;
+    border: 0px solid;
+    border-radius: 3px;
 }
 
 #workspaces button.active {
-	background: #732d50;
-	border-radius: 8px;
-	border-color: #732d50;
-	animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    background: #732d50;
+    border-radius: 3px;
 }
 
 #workspaces button:hover {
-	background: #8f5672;
-	border-radius: 8px;
-	animation: gradient_f 20s ease-in infinite;
- 	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    background: #884e6b;
 }
 
 #workspaces button {
-	padding: 1px;
-  	border-radius: 8px;
-	animation: gradient_f 20s ease-in infinite;
-	transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    padding: 1px;
+    border-radius: 3px;
 }
