@@ -1,2 +1,0 @@
-require('yohansan1')
-
