@@ -10,6 +10,10 @@ I set my wallpapers using my other repository [where i download NASA APOD daily]
 
 ## Colors
 
-I'm still tweaking nvim colors so it may contain visual glitches.
+I'm still tweaking nvim colors so it may contain visual glitches. Soon I will update every configs.
 
+This is my current kitty colors.
+![Current Neofetch](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/neofetch.png)
+
+Old desktop Colors
 ![Colors](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/colors.png)
