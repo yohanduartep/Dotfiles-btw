@@ -6,8 +6,6 @@ I set my wallpapers using my other repository [where i download NASA APOD daily]
 
 ![Monitor1](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/monitor1.png)
 
-![Desktop](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/desktop.png)
-
 ## Colors
 
 I'm still tweaking nvim colors so it may contain visual glitches. Soon I will update every configs.
