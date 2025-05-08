@@ -12,7 +12,7 @@ horsinaround.sh is a script to show my nvim binds + some random phrases that i s
 
 ## Lock Screen
 
-![lockscreen](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/lockscreen.png)
+![lockscreen](https://raw.githubusercontent.com/yohanduartep/Dotfiles-btw/refs/heads/master/Images/hyprlock.png)
 
 ## Colors
 
