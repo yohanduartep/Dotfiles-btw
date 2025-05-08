@@ -1,53 +1,18 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
-    "margin-left": 0,
-    "margin-right": 0,
+    "height": 26,
     "spacing": 2,
+    //Groups
+    //Ordered from left to right
+    //Left Side
     "modules-left": [
         "hyprland/workspaces#special",
         "group/hardware",
+        "custom/spacewindow",
+        "hyprland/window",
+        "custom/spacewindow",
     ],
-    "modules-center":[
-        "hyprland/window"
-    ],
-    "modules-right":[
-        "tray",
-        "hyprland/workspaces",
-        "group/big",
-    ],
-    "custom/space": {
-        "format": "  ",
-        "tooltip": false
-    },
-    "custom/spaceline": {
-        "format": " | ",
-        "tooltip": false
-    },
-    "custom/linel":{
-        "format": "  <span size='x-large'><b>‖</b></span>",
-        "tooltip": false
-    },
-    "custom/liner":{
-        "format": "<span size='x-large'><b>‖</b></span>  ",
-        "tooltip": false
-    },
-
-    "hyprland/window":{
-        "separate-outputs": true
-    },
-    "group/big": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/space",
-            "pulseaudio",
-            "custom/linel",
-            "group/network",
-            "custom/liner",
-            "group/clockbat",
-        ]
-    },
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
@@ -65,21 +30,70 @@
             "custom/space"
         ]
     },
-    "custom/cpuicon": {
-        "format": "<span size='x-large'><b> </b></span>",
-        "tooltip": false
+    //Right Side
+    "modules-right":[
+        "custom/horsinaround",
+        "custom/spacetrayl",
+        "tray",
+    "custom/spacetrayr",
+        "hyprland/workspaces",
+        "group/big",
+    ],
+    "group/big": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/space",
+            "pulseaudio",
+            "custom/line",
+            "group/network",
+            "custom/line",
+            "group/clockbat",
+        ]
+    },
+    "group/network": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "custom/net"
+        ]
+    },
+    "group/clockbat": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+            "battery"
+        ]
+    },
+    // Elements
+    // Ordered alphabetically
+    "battery": {
+        "states": {"good": 95, "warning": 30, "critical": 15},
+        "on-click":"hyprlock",
+        "on-click-middle":"/home/yohansan1/Pictures/random_nasa_apod.sh && shutdown -h now",
+        "on-click-right": "reboot",
+        "format": " <span size='large'>{icon}</span> {capacity}% <span size='large'><b>󰠚</b></span>",
+        "format-icons": ["󰂎", "󰁼", "󰁿", "󰁹"]
+    },
+    "clock": {
+        "format": " <span size='large'></span>  {:%d-%m-%Y | <span size='large'>󰥔</span>  %H:%M |}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#884e6b'><b>{}</b></span>",
+                "days": "<span color='#ffeef2'><b>{}</b></span>",
+                "weeks": "<span color='#ffeef2'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffeef2'><b>{}</b></span>",
+                "today": "<span color='#884e6b'><b>{}</b></span>"
+            }
+        }
     },
     "cpu": {
         "interval": 5,
         "format": "{usage:2}%"
     },
-    "temperature":{
-        "thermal-zone": 7,
-        "interval": 5,
-        "format": " {temperatureC}°C"
-    },
-    "custom/gpuicon":{
-        "format": "<span size='x-large'><b>󰢮 </b></span>",
+    "custom/cpuicon": {
+        "format": "<span size='x-large'><b> </b></span>",
         "tooltip": false
     },
     "custom/gpu": {
@@ -87,6 +101,10 @@
         "format": "{}%",
         "return-type": "",
         "interval": 5,
+        "tooltip": false
+    },
+    "custom/gpuicon":{
+        "format": "<span size='x-large'><b>󰢮 </b></span>",
         "tooltip": false
     },
     "custom/gputemp": {
@@ -97,7 +115,35 @@
         "tooltip": false
     },
     "custom/memicon": {
-        "format": "<span>RAM: </span>",
+        "format": "<span>RAM:</span>",
+        "tooltip": false
+    },
+    "custom/net": {
+        "format": " <span size='small'><s>{}</s></span>",
+        "exec": "~/.config/waybar/scripts/public_ip.sh",
+        "on-click": "~/.config/waybar/scripts/ip_vpn.sh click",
+        "return-type": "text",
+        "interval": 5,
+        "tooltip": false
+    }, 
+    "custom/line":{
+        "format": " <span size='x-large'><b>|</b></span> ",
+        "tooltip": false
+    },
+    "custom/spaceline": {
+        "format": " <b>|</b> ",
+        "tooltip": false
+    },
+    "custom/spacetrayl": {
+        "format": " <span size='x-large'><b>•</b></span>",
+        "tooltip": false
+    },
+    "custom/spacetrayr": {
+        "format": "<span size='x-large'><b>•</b></span> ",
+        "tooltip": false
+    },
+    "custom/spacewindow": {
+        "format": " <span size='x-large'><b>◦</b></span> ",
         "tooltip": false
     },
     "memory": {
@@ -105,85 +151,40 @@
         "format": " {used:.1f}G/{total:.1f}G",
         "tooltip": false
     },
-    "group/network": {
-        "orientation": "horizontal",
-        "modules": [
-            "network",
-            "custom/public_ip"
-        ]
-    },
-    "custom/public_ip": {
-        "format": "{} ",
-        "exec": "~/.config/waybar/scripts/public_ip.sh",
-        "return-type": "text",
-        "interval": 5,
-        "tooltip": false
-    },
     "network": {
         "family": "ipv4",
-        "format-wifi": "󰖩  {essid}  |  {gwaddr}  |",
-        "format-ethernet": "󰈀  eth  |  {gwaddr}  |",
-        "tooltip-format": "| {ifname} | 󰖩  {signalStrength}% | {ipaddr} |",
-        "format-linked": "{ifname} (No IP) 󰖩",
-        "format-disconnected": "󰖩  ",
+        "format-wifi": " <span size='large'>󰖩 </span>{essid}",
+        "format-ethernet": " <span size='large'>󰈀 </span> eth",
+        "tooltip-format": "<span size='large'>󰖩  </span> {signalStrength}%  {ipaddr}",
+        "format-linked": "{ifname} (No IP) <span size='large'>󰖩  </span>",
+        "format-disconnected": "<span size='large'>󰖩  </span> ",
         "on-click": "kitty -e nmtui"
     },
-    "group/clockbat": {
-        "orientation": "horizontal",
-        "modules": [
-            "clock",
-            "battery"
-        ]
-    },
-    "clock": {
-        "format": "   {:%d-%m-%Y |  󰥔  %H:%M |}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "format": {
-                "months": "<span color='#ba7096'><b>{}</b></span>",
-                "days": "<span color='#f3eee3'><b>{}</b></span>",
-                "weeks": "<span color='#f3eee3'><b>W{}</b></span>",
-                "weekdays": "<span color='#f3eee3'><b>{}</b></span>",
-                "today": "<span color='#ba7096'><b>{}</b></span>"
-            }
-        }
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "on-click":"hyprlock",
-        "on-click-middle":"/home/yohansan1/Pictures/random_nasa_apod.sh && shutdown -h now",
-        "on-click-right": "reboot",
-        "format": "{icon} {capacity}% ",
-        "format-icons": [
-            "󰂎",
-            "󰁼",
-            "󰁿",
-            "󰁹"
-        ]
-    },
     "pulseaudio": {
-        "format": "{icon}  {volume:2}%",
-        "format-source": " {volume}%",
-        "format-muted": "MUTE",
-        "format-icons": {
-            "headphones": "",
-            "default": [
-                "",
-                "󰕾"
-            ]
-        },
+        "format": "<span size='large'> </span>{volume:2}%",
+        "format-muted": "<span size='x-large'>󰖁 </span>MUTE",
         "scroll-step": 5,
         "on-click-right": "pavucontrol",
         "on-click": "pamixer -t"
     },
+    "temperature":{
+        "thermal-zone": 7,
+        "interval": 5,
+        "format": " {temperatureC}°C"
+    },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 20,
         "spacing": 1
+    },
+    "hyprland/window":{
+        "separate-outputs": true,
+        "format":"{initialTitle} > {title}",
+        "max-length": 42,
+        "offscreen-css" : true,
+        "offscreen-css-text": "(inactive)",
+        "rewrite": {
+            "^(.*?)(?: — (.*))$": "$1"
+        }
     },
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -191,35 +192,31 @@
         "all-outputs": false,
         "show-special": false,
         "on-click": "activate",
-        "format-icons":{
-            "1": "I",
-            "2": "II",
-            "3": "III",
-            "4": "IV",
-            "5": "V",
-            "6": "VI",
-            "7": "VII",
-            "8": "VIII",
-            "9": "IX",
-            "10": "X",
-            "11": "Code",
-            "12": "Read",
-            "13": "Mail",
-            "14": "News",
-            "15": "Steam",
-            "16": "Discord"
-        }
+        "format-icons":{ "1": " I ", "2": " II ", "3": " III ", "4": " IV ", "5": " V ", "6": " VI ",
+            "7": " VII ", "8": " VIII ", "9": " IX ", "10": " X ", "11": " Read ", "12": " Mail ",
+            "13": " News ", "14": " Steam ",}
     },
     "hyprland/workspaces#special": {
-        "format": "{icon} ",
+        "format": "  <span size='x-large'><b> </b></span>",
         "show-special":true,
         "active-only":false,
         "all-outputs":true,
-        "ignore-workspaces":["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11","12","13","14","15","16"],
+        "ignore-workspaces":["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11","12","13","14"],
         "persistent-workspaces": ["special"],
         "on-click": "activate",
-        "format-icons":{
-            "special": " <span size='x-large'><b></b></span>  "
-        }
-    }
+    },
+    //Scripts
+    //Ordered alphabetically
+    "custom/horsinaround":{
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/horsinaround.sh",
+        "interval": 120,
+        "return-type": "text",
+        "on-click": "~/.config/waybar/scripts/horsinaround.sh click",
+        "expand":false,
+    },
+
 }
+
+
+

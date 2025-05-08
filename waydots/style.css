@@ -1,156 +1,83 @@
 * {
-    font-size: 13px;
-    font-family: Rubik;
-    font-weight: bold;
-    color: #f3eee3;
+    border: none;
+    box-shadow: none;
+    color: #ffeef2;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
 }
-tooltip label {
-    padding: 3px 3px 3px 3px;
-    font-family: Rubik;
-    font-weight: bold;
-    font-size: 13px;
-    color: #f3eee3;
+.modules-center {
+    background: #190a12;
+}
+.modules-left {
+    background: #190a12;
+    padding-left: 1px;
+    padding-right: 3px;
+}
+.modules-right {
+    background: #190a12;
+    padding-left: 3px;
+    padding-right: 1px;
 }
 tooltip {
-    padding: 10px 10px 10px 10px;
-    border: 0px solid;
     border-radius: 3px;
-    color: #f3eee3;
+    color: #ffeef2;
+    padding: 10px 10px 10px 10px;
 }
-
+tooltip label {
+    color: #ffeef2;
+    padding: 3px 3px 3px 3px;
+}
 window#waybar {
     background: #190a12;
     color: #190a12;
 }
-
-#custom-memicon1 {
-    font-size: 13px;
-}
-#custom-cpuicon {
-    font-weight: normal;
-    font-size: 13px;
-}
-#custom-workspaces {
-    font-size: 13px;
-    font-family: Typeface;
-}
-#custom-app {
-    border: 0px solid;
-}
-
-#clock {
-    padding: 3px 0px 3px 5px;
-    border: 0px solid;
-    border-radius: 3px;
-    min-width: 150px;
-}
-.modules-left {
-    background: #190a12;
-    padding-top: 0px;
-    padding-bottom: 2px;
-    padding-left: 1px;
-    padding-right: 3px;
-}
-.modules-center {
-    background: #190a12;
-    padding-top: 0px;
-    padding-bottom: 2px;
-    margin-right: 20rem;
-}
-.modules-right {
-    background: #190a12;
-    padding-top: 0px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-    padding-right: 1px;
-}
-
-#hardware {
-    background: #884e6b;
-    padding: 0px 0px 0px 0px;
-    border: 0px solid;
-    border-radius: 3px;
-}
-#network {
-    padding: 3px 5px;
-    margin: 0px 0px 0px 0px;
-    border: 0px solid;
-    border-radius: 3px;
-}
-
 #battery {
-    padding: 3px 5px 3px 0px;
-    border: 0px solid;
     border-radius: 3px;
     min-width: 70px;
 }
-#cpu {
-    padding: 3px 0px;
-    margin: 0px 0px 0px 0px;
+#big {
+    background: #884e6b;
+    border-radius: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
-#custom-cpuicon {
-    padding: 3px 0px;
-    margin: 0px 0px 0px 0px;
+#clock {
+    border-radius: 3px;
+    min-width: 150px;
 }
-#memory {
-    padding: 3px 0px;
-    margin: 0px 0px 0px 0px;
-}
-#custom-memicon1 {
-    padding: 3px 0px;
-    margin: 0px 0px 0px 0px;
-}
-#custom-space {
-    padding: 3px 0px;
-    margin: 0px 0px 0px 0px;
-}
-#pulseaudio {
-    padding: 5px 5px;
-    margin: 0px 0px 0px 0px;
-    border: 0px solid;
+#clockbat {
+    background: #884e6b;
     border-radius: 3px;
 }
-#tray {
-    padding: 5px 5px;
-    margin: 0px 0px 0px 0px;
-    border: 0px solid;
-    border-radius: 3px;
-}
-
 #custom-app {
-    padding: 3px 10px;
-    margin: 0px 0px 0px 0px;
     min-width: 180px;
 }
-
+#hardware {
+    background: #884e6b;
+    border-radius: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+#network {
+    border-radius: 3px;
+}
+#pulseaudio {
+    border-radius: 3px;
+}
 #workspaces {
     background: #884e6b;
-    border: 0px;
     border-radius: 3px;
 }
-
-#clockbat {
-    background: #732d50;
-    border: 0px solid;
+#workspaces button {
     border-radius: 3px;
 }
-
-#big {
-    background: #732d50;
-    border: 0px solid;
-    border-radius: 3px;
-}
-
 #workspaces button.active {
     background: #732d50;
     border-radius: 3px;
 }
-
 #workspaces button:hover {
     background: #884e6b;
-}
-
-#workspaces button {
-    padding: 1px;
-    border-radius: 3px;
 }
